@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner ingreso = new Scanner(System.in);
-        Letra iniciales = new Letra();
+        LetraFor iniciales = new LetraFor();
         System.out.println("Ingrese la cantidad de columnas");
         iniciales.columnas = ingreso.nextInt();
         System.out.println("Ingrese la cantidad de filas");
