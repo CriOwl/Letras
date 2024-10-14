@@ -33,23 +33,27 @@ public class LetraFor {
     public void pintar_seguido() {
         for (int i = 1; i <= filas; i++) {
             for (int j = 1; j <= columnas; j++) {
-                pintar_p(j, i);
-            }
-            Separar();
-            for (int j = 1; j <= columnas; j++) {
                 pintar_c(j, i);
             }
             Separar();
             for (int j = 1; j <= columnas; j++) {
-                pintar_c(j, i);
+                pintar_r(j, i);
             }
             Separar();
             for (int j = 1; j <= columnas; j++) {
-                pintar_j(j, i);
+                pintar_i(j, i);
             }
             Separar();
             for (int j = 1; j <= columnas; j++) {
                 pintar_s(j, i);
+            }
+            Separar();
+            for (int j = 1; j <= columnas; j++) {
+                pintar_c(j, i);
+            }
+            Separar();
+            for (int j = 1; j <= columnas; j++) {
+                pintar_c(j, i);
             }
             Separar();
             for (int j = 1; j <= columnas; j++) {
@@ -110,6 +114,13 @@ public class LetraFor {
     }
     public void pintar_h(int j, int i) {
         if (j==1|j==columnas|i==(filas/2)) {
+            System.out.print("*");
+        } else {
+            System.out.print(" ");
+        }
+    }
+    public void pintar_i(int j, int i) {
+        if (i==1|j==(columnas/2)|i==filas) {
             System.out.print("*");
         } else {
             System.out.print(" ");
