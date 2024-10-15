@@ -1,38 +1,35 @@
 
-public class LetraWhile {
+public class Letra {
     public int filas;
     public int columnas;
-    private int veces = 1;
 
-    public void LetraWhile() {
+    public void Letra() {
     }
 
     public void pintar() {
-        while (veces <= 4) {
-            int i = 1;
-            while (i <= filas) {
-                int j = 1;
-                while (j <= columnas) {
+        for (int veces = 1; veces <= 4; veces++) {
+            for (int i = 1; i <= filas; i++) {
+                for (int j = 1; j <= columnas; j++) {
                     switch (veces) {
                         case 1:
-                            pintar_p(j, i);
+                            pintar_c(j, i);
                             break;
                         case 2:
-                            pintar_c(j, i);
+                            pintar_p(j, i);
                             break;
                         case 3:
-                            pintar_l(j, i);
-                            break;
-                        case 4:
                             pintar_c(j, i);
                             break;
+                        case 4:
+                            pintar_l(j, i);
+                            break;
                     }
-                    j++;
+                    {
+
+                    }
                 }
-                i++;
                 System.out.println();
             }
-            veces++;
             System.out.println();
         }
     }
@@ -46,23 +43,16 @@ public class LetraWhile {
     }
 
     public void pintar_seguido() {
-        int i = 1;
-        while (i <= filas) {
-            int j = 1;
-            while (j <= columnas) {
+        for (int i = 1; i <= filas; i++) {
+            for (int j = 1; j <= columnas; j++) {
                 pintar_c(j, i);
-                j++;
             }
             Separar();
-            int h = 1;
-            while (h <= columnas) {
-                pintar_c(h, i);
-                h++;
+            for (int j = 1; j <= columnas; j++) {
+                pintar_c(j, i);
             }
-            i++;
             System.out.println();
         }
-
     }
 
     public void pintar_p(int j, int i) {
@@ -82,6 +72,8 @@ public class LetraWhile {
     }
 
     private void Separar() {
-        System.out.print("   ");
+        for (int i = 0; i < 3; i++) {
+            System.out.print(" ");
+        }
     }
 }

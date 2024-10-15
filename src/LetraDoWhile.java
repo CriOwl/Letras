@@ -1,40 +1,40 @@
 
-public class LetraWhile {
+public class LetraDoWhile {
     public int filas;
     public int columnas;
     private int veces = 1;
 
-    public void LetraWhile() {
+    public void LetraDoWhile() {
     }
 
     public void pintar() {
-        while (veces <= 4) {
+        do {
             int i = 1;
-            while (i <= filas) {
+            do {
                 int j = 1;
-                while (j <= columnas) {
+                do {
                     switch (veces) {
                         case 1:
-                            pintar_p(j, i);
+                            pintar_l(j, i);
                             break;
                         case 2:
                             pintar_c(j, i);
                             break;
                         case 3:
-                            pintar_l(j, i);
+                            pintar_p(j, i);
                             break;
                         case 4:
                             pintar_c(j, i);
                             break;
                     }
                     j++;
-                }
+                } while (j <= columnas);
                 i++;
                 System.out.println();
-            }
+            } while (i <= filas);
             veces++;
             System.out.println();
-        }
+        } while (veces <= 4);
     }
 
     public void pintar_c(int j, int i) {
@@ -47,21 +47,21 @@ public class LetraWhile {
 
     public void pintar_seguido() {
         int i = 1;
-        while (i <= filas) {
+        do {
             int j = 1;
-            while (j <= columnas) {
+            do {
                 pintar_c(j, i);
                 j++;
-            }
+            } while (j <= columnas);
             Separar();
             int h = 1;
-            while (h <= columnas) {
+            do {
                 pintar_c(h, i);
                 h++;
-            }
+            } while (h <= columnas);
             i++;
             System.out.println();
-        }
+        } while (i <= filas);
 
     }
 

@@ -1,5 +1,5 @@
 
-public class LetraFor {
+public class Bonus {
     public int filas;
     public int columnas;
 
@@ -121,6 +121,13 @@ public class LetraFor {
     }
     public void pintar_i(int j, int i) {
         if (i==1|j==(columnas/2)|i==filas) {
+            System.out.print("*");
+        } else {
+            System.out.print(" ");
+        }
+    }
+    public void pintar_t(int j, int i) {
+        if (i==(filas/2)|j==(columnas/2)|i==filas) {
             System.out.print("*");
         } else {
             System.out.print(" ");
