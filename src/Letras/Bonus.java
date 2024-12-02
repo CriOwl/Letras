@@ -1,3 +1,4 @@
+package Letras;
 
 public class Bonus {
     public int filas;

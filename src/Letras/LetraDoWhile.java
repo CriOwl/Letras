@@ -1,10 +1,11 @@
+package Letras;
 
 public class LetraDoWhile {
     public int filas;
     public int columnas;
     private int veces = 1;
 
-    public void LetraDoWhile() {
+    public LetraDoWhile() {
     }
 
     public void pintar() {
