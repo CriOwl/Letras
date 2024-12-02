@@ -1,6 +1,4 @@
 package Letras;
-import Letras.Utilitario;
-
 public class LetraFor {
     private int filas;
     private int columnas;
@@ -14,6 +12,7 @@ public class LetraFor {
     }
 
     public LetraFor() {
+        System.out.println("Ingrese la cantidad de columnas");
         while (!Utilitario.teclado.hasNextInt()) {
             System.out.println("Ingrese un numero entero");
             Utilitario.teclado.hasNextLine();
@@ -25,9 +24,11 @@ public class LetraFor {
             Utilitario.teclado.hasNextLine();
         }
         setFilas(Utilitario.teclado.nextInt());
+        pintar();
+        pintar_seguido();
     }
 
-    public void pintar() {
+    private  void pintar() {
         for (int veces = 1; veces <= 4; veces++) {
             for (int i = 1; i <= filas; i++) {
                 for (int j = 1; j <= columnas; j++) {
@@ -55,7 +56,7 @@ public class LetraFor {
         }
     }
 
-    public void pintar_c(int j, int i) {
+    private void pintar_c(int j, int i) {
         if (j == 1 | i == filas | i == 1) {
             System.out.print("*");
         } else {
@@ -63,7 +64,7 @@ public class LetraFor {
         }
     }
 
-    public void pintar_seguido() {
+    private void pintar_seguido() {
         for (int i = 1; i <= filas; i++) {
             for (int j = 1; j <= columnas; j++) {
                 pintar_c(j, i);
@@ -76,7 +77,7 @@ public class LetraFor {
         }
     }
 
-    public void pintar_p(int j, int i) {
+    private void pintar_p(int j, int i) {
         if (j == 1 | i == (filas + 2) / 2 | i == 1 | (j == columnas && i <= (filas / 2))) {
             System.out.print("*");
         } else {
@@ -84,7 +85,7 @@ public class LetraFor {
         }
     }
 
-    public void pintar_l(int j, int i) {
+    private void pintar_l(int j, int i) {
         if (j == 1 | i == filas) {
             System.out.print("*");
         } else {

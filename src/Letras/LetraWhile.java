@@ -6,9 +6,23 @@ public class LetraWhile {
     private int veces = 1;
 
     public LetraWhile() {
+        System.out.println("Ingrese la cantidad de columnas");
+        while (!Utilitario.teclado.hasNextInt()) {
+            System.out.println("Ingrese un numero entero");
+            Utilitario.teclado.hasNextLine();
+        }
+        setColumnas(Utilitario.teclado.nextInt()) ;
+        System.out.println("Ingrese la cantidad de filas");
+        while (!Utilitario.teclado.hasNextInt()) {
+            System.out.println("Ingrese un numero entero");
+            Utilitario.teclado.hasNextLine();
+        }
+        setFilas(Utilitario.teclado.nextInt());
+        pintar();
+        pintar_seguido();
     }
 
-    public void pintar() {
+    private void pintar() {
         while (veces <= 4) {
             int i = 1;
             while (i <= filas) {
@@ -38,7 +52,7 @@ public class LetraWhile {
         }
     }
 
-    public void pintar_c(int j, int i) {
+    private void pintar_c(int j, int i) {
         if (j == 1 | i == filas | i == 1) {
             System.out.print("*");
         } else {
@@ -46,7 +60,7 @@ public class LetraWhile {
         }
     }
 
-    public void pintar_seguido() {
+    private void pintar_seguido() {
         int i = 1;
         while (i <= filas) {
             int j = 1;
@@ -66,7 +80,7 @@ public class LetraWhile {
 
     }
 
-    public void pintar_p(int j, int i) {
+    private void pintar_p(int j, int i) {
         if (j == 1 | i == (filas + 2) / 2 | i == 1 | (j == columnas && i <= (filas / 2))) {
             System.out.print("*");
         } else {
@@ -74,7 +88,7 @@ public class LetraWhile {
         }
     }
 
-    public void pintar_l(int j, int i) {
+    private void pintar_l(int j, int i) {
         if (j == 1 | i == filas) {
             System.out.print("*");
         } else {
@@ -84,5 +98,13 @@ public class LetraWhile {
 
     private void Separar() {
         System.out.print("   ");
+    }
+
+    private void setFilas(int filas) {
+        this.filas = filas;
+    }
+
+    private void setColumnas(int columnas) {
+        this.columnas = columnas;
     }
 }
